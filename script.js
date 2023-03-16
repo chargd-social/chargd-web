@@ -37,6 +37,12 @@ function load_feed() {
   })
 }
 
+
+window.onload = (event) => {
+  load_feed();
+};
+
+
 document.querySelector('button')
 .addEventListener('click', (e) => {
   e.preventDefault(); // no idea what this does i copied it from somewhere
