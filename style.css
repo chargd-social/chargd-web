@@ -1,0 +1,78 @@
+@import url('https://unpkg.com/@catppuccin/palette/css/catppuccin.css');
+
+body {
+  /* style */
+  font-family: "Inter", sans-serif;
+  color: var(--ctp-macchiato-text);
+  /* layout */
+  margin: 0;
+}
+.main {
+  /* style */
+  background-color: var(--ctp-macchiato-base);
+  padding: 8px;
+  /* layout */
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.feed {
+  /* style */
+  background-color: var(--ctp-macchiato-crust);
+  border-radius: 16px;
+  overflow: auto;
+  /* layout */
+  height: 100%;
+  width: 320px;
+  position: relative;
+  float: right;
+  z-index: 1;
+}
+/* TODO: fix this :despair: */
+.feed_shade {
+  content:'';
+  border-radius: 16px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 128px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0),
+    rgba(0,0,0,0.85) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+.feed_item {
+  padding: 16px;
+  border-bottom: 2px solid var(--ctp-macchiato-surface0);
+}
+.feed_timestamp {
+  font-size: 1em;
+}
+.feed_username {
+  display: inline;
+  font-size: 1.1em;
+  font-weight: 700;
+}
+.feed_actiontext {
+  color: var(--ctp-macchiato-subtext1);
+  display: inline;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+.feed_percentage {
+  font-size: 1.4em;
+}
+.feed_captionbox {
+  color: var(--ctp-macchiato-subtext0);
+  background-color: rgba(0,0,0,0);
+  border: none;
+  font-size: 1em;
+
+}
+::placeholder { color: var(--ctp-macchiato-subtext0); opacity: 1; } /* Chrome, Firefox, Opera, Safari 10.1+ (opacity for firefox)*/
+::-ms-input-placeholder { color: var(--ctp-macchiato-subtext0); } /* Edge */
+:-ms-input-placeholder { color: var(--ctp-macchiato-subtext0); } /* IE 10-11 (gross) */
