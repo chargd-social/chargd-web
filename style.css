@@ -3,7 +3,6 @@
 
 
 :root {
-  --shiny-gradient-right: linear-gradient(to right, rgba(192,157,255,1) 0%, rgba(106,197,243,1) 50%, rgba(83,195,190,1) 100%);
   --shiny-gradient-diagonal: linear-gradient(69deg, #D9C7FF 10%, #78cbf6 50%, #78D7D3 90%);
   --purple: #D9C7FF;
   --blue: #B6D8F7;
@@ -55,8 +54,9 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding: 16px 0;
 }
-
+/*
 .chargd_title {
   align-self: center;
   text-align: center;
@@ -66,7 +66,7 @@ body {
   background: var(--shiny-gradient-diagonal);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
+} */
 
 #refresh_button {
   /* background: var(--shiny-gradient-diagonal); */
