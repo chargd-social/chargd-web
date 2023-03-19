@@ -30,32 +30,54 @@
 
 <body>
 	<div class="main">
+		<div class="visualisation">
+
+			<div class="visual-center">
+
+				<svg id="circle-progress" width="300" height="300" viewPort="0 0 150 150" version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+					<linearGradient id="circle-gradient" x1="0" y1="0" x2="1" y2="1">
+			       <stop offset="0%" stop-color="#D9C7FF"></stop>
+			       <stop offset="50%" stop-color="#78cbf6"></stop>
+			       <stop offset="100%" stop-color="#78D7D3"></stop>
+			    </linearGradient>
+
+					<circle class="circle-progress-svg" id="circle-progress-svg-back" r="120" cx="150" cy="150" fill="transparent" stroke-dasharray="753.98" stroke-dashoffset=0></circle>
+					<circle class="circle-progress-svg" id="circle-progress-svg-bar" r="120" cx="150" cy="150" fill="transparent" stroke-dasharray="753.98" stroke="url(#circle-gradient)"></circle>
+				</svg>
+
+			</div>
+		</div>
+
 		<div class="feed">
 			<div class="chargd_title_wrapper">
 				<!-- <h1 class="chargd_title">chargd</h1> -->
 				<img src="assets/logo on black.svg" width=90%></svg>
 			</div>
 			<button type="submit" id="refresh_button">refresh</button>
-			<div id="show_stuff"></div>
+			<div id="show_stuff">
 
-			<!-- <div class="feed_item">
-				<p class="feed_timestamp">today at 12:06</p>
-				<h1 class="feed_username">bucketfish</h1>
-				<h2 class="feed_actiontext"> plugged in their phone.</h2>
-				<h1 class="feed_percentage">63%</h1>
-				<p class="feed_captionbox">new app ver just got home</p>
+				<!-- <div class="feed_item">
+					<p class="feed_timestamp">today at 12:06</p>
+					<h1 class="feed_username">bucketfish</h1>
+					<h2 class="feed_actiontext"> plugged in their phone.</h2>
+					<h1 class="feed_percentage">63%</h1>
+					<p class="feed_captionbox">new app ver just got home</p>
+				</div>
+				<div class="feed_item">
+					<p class="feed_timestamp">today at 12:06</p>
+					<h1 class="feed_username">bucketfish</h1>
+					<h2 class="feed_actiontext"> plugged in their phone.</h2>
+					<h1 class="feed_percentage">63%</h1>
+					<p class="feed_captionbox">new app ver just got home</p>
+				</div> -->
 			</div>
-			<div class="feed_item">
-				<p class="feed_timestamp">today at 12:06</p>
-				<h1 class="feed_username">bucketfish</h1>
-				<h2 class="feed_actiontext"> plugged in their phone.</h2>
-				<h1 class="feed_percentage">63%</h1>
-				<p class="feed_captionbox">new app ver just got home</p>
-			</div> -->
-
 			<div class="feed_shade"></div>
 		</div>
+
+
 	</div>
+
 	<script src="script.js"></script>
 </body>
 
