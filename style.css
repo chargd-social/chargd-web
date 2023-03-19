@@ -16,10 +16,21 @@
 
   --progress-bar-percent: 0;
 
+  --normal-battery-total-width: 168px;
+  --normal-battery-text-width: 160px;
+
+  --you-battery-total-width: 252px;
+  --you-battery-text-width: 240px;
+
 }
 
 * {
   font-family: "Inter", sans-serif;
+}
+
+html {
+  background-color: var(--black);
+
 }
 body {
   /* style */
@@ -35,14 +46,25 @@ body {
   /* layout */
   width: 100vw;
   height: 100vh;
-  box-sizing: border-box;
 }
 
 .visualisation {
-  min-width: 100vw;
-  min-height: 100vh;
+  min-width: 110vw;
+  min-height: 110vh;
   box-sizing: border-box;
-  padding: 8px;
+  /* padding: 8px; */
+  background-color: var(--black);
+}
+
+
+.visual-center {
+  /*wrapper for the center part*/
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -150px;
+  display: inline-block;
 }
 
 
@@ -64,6 +86,106 @@ circle.circle-progress-svg {
 #circle-progress-svg-back {
   stroke: var(--dark-gray);
 }
+
+
+
+
+.battery {
+  /* position: absolute; */
+  display: flex;
+  flex-flow: column;
+  width: var(--normal-battery-total-width);
+
+  margin: 16px
+}
+
+.battery .battery-username {
+  font-size: 1.5em;
+  width: var(--normal-battery-text-width);
+  font-weight: 300;
+  text-align: center;
+
+  display: inline-block;
+  margin: 0 0 0 2px;
+
+}
+
+.battery .battery-display {
+  display: inline-block;
+}
+
+.battery .battery-inside {
+  position: relative;
+  top: -84px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  aspect-ratio: 2 / 1;
+  width: var(--normal-battery-text-width);
+
+  margin: 0 0 -80px 0;
+
+}
+
+.battery .battery-inside .battery-percentage {
+  font-size: 1.5em;
+  text-align: center;
+  font-weight: bold;
+  margin: 0;
+}
+
+.battery .battery-inside .battery-time {
+  text-align: center;
+  color: var(--light-gray);
+  margin: 0;
+}
+
+
+.battery .battery-display svg {
+  position: relative;
+  width: var(--normal-battery-total-width);
+}
+
+.battery .battery-stroke {
+  stroke: var(--dark-gray);
+}
+
+.battery .battery-fill {
+  fill: var(--dark-gray);
+}
+
+.battery.plugged-in .battery-stroke{
+  stroke: var(--purple);
+}
+
+.battery.plugged-in .battery-fill{
+  fill: var(--purple);
+}
+
+.battery.you {
+
+}
+
+.battery.you svg {
+  width: var(--you-battery-total-width);
+}
+
+.battery.you.plugged-in .battery-stroke{
+  stroke: var(--green);
+}
+
+.battery.you.plugged-in .battery-fill{
+  fill: var(--green);
+}
+
+
+.battery.plugged-in .battery-chargeindicator {
+  fill: var(--dark-gray);
+}
+
+
+
+
 
 
 .feed {
