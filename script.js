@@ -2,7 +2,7 @@
 const DEBUG = false // this doesn't do anything rn but maybe it could
 
 var api_url = "https://api.chargd.social" // can change this during debug
-api_url = "http://localhost:3000"
+// api_url = "http://localhost:3000"
 
 
 var document_root = document.querySelector(":root");
