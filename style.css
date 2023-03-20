@@ -19,8 +19,12 @@
   --normal-battery-total-width: 168px;
   --normal-battery-text-width: 160px;
 
+  --normal-battery-total-height: 111px;
+
   --you-battery-total-width: 252px;
   --you-battery-text-width: 240px;
+
+  --total-users: 0;
 
 }
 
@@ -88,15 +92,30 @@ circle.circle-progress-svg {
 }
 
 
+#temp-battery-display {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
 
 
 .battery {
-  /* position: absolute; */
+  position: absolute;
+  --cur-count: 0;
+  --distribution-radius-top: 250px;
+  --distribution-radius-left: 300px;
+
   display: flex;
   flex-flow: column;
   width: var(--normal-battery-total-width);
 
-  margin: 16px
+
+  top: calc(50% + (sin( (var(--cur-count) * (360deg / var(--total-users))) - 90deg ) * var(--distribution-radius-top)));
+  left: calc(50% + (cos( (var(--cur-count) * (360deg / var(--total-users))) - 90deg ) * var(--distribution-radius-left)));
+
+  margin-top: calc(-0.5 * var(--normal-battery-total-height) - 6px);
+  margin-left: calc(-0.5 * var(--normal-battery-total-width));
+
 }
 
 .battery .battery-username {
@@ -189,6 +208,9 @@ circle.circle-progress-svg {
 
 
 .feed {
+  display: none;
+
+
   /* style */
   background-color: var(--dark-gray);
   border-radius: 24px;

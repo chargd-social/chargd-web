@@ -2,7 +2,7 @@
 const DEBUG = false // this doesn't do anything rn but maybe it could
 
 var api_url = "https://api.chargd.social" // can change this during debug
-// api_url = "http://localhost:3000"
+api_url = "http://localhost:3000"
 
 
 var document_root = document.querySelector(":root");
@@ -14,6 +14,7 @@ function load_feed() {
   const new_div = document.createElement("div");
 
   const show_battery = document.getElementById("temp-battery-display")
+  show_battery.innerHTML = ""
   const battery_div = document.createElement("div"); // to show the battery visualisation
 
   // keep track of number of users to use to set the circular progress bar
@@ -27,7 +28,11 @@ function load_feed() {
   .then((data) => {
     console.log(data);
 
+    var current_count = 0;
+
     // add each user
+
+
     for (const username in data) {
       num_users += 1;
       const personDiv = document.createElement("div");
@@ -82,7 +87,9 @@ function load_feed() {
         new_battery.classList.add("plugged-in")
       }
 
-      battery_div.appendChild(new_battery)
+      new_battery.style.setProperty("--cur-count", num_users - 1);
+
+      show_battery.appendChild(new_battery)
     }
 
     // update the div
@@ -90,11 +97,14 @@ function load_feed() {
     show_div.appendChild(new_div);
 
 
-    show_battery.innerHTML = "";
-    show_battery.appendChild(battery_div);
+    // show_battery.innerHTML = "";
+    // show_battery.appendChild(battery_div);
 
     // update the circle percentage bar
     set_circle_percentage((plugged_in_users / num_users) * 100);
+
+    document_root.style.setProperty("--total-users", num_users);
+
   })
 
 
