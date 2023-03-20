@@ -89,7 +89,40 @@ function load_feed() {
 
       new_battery.style.setProperty("--cur-count", num_users - 1);
 
-      show_battery.appendChild(new_battery)
+      show_battery.appendChild(new_battery);
+
+
+      console.log(new_battery.offsetWidth);
+      console.log(new_battery.offsetHeight);
+      var rect = new_battery.getBoundingClientRect();
+
+
+      text = `
+      <path d="M 0 0 L ${rect.top + window.scrollY} ${rect.left + window.scrollX}"/>
+      `
+
+      // plan here:
+      /*
+      - set and calculate top and left using js instead of css
+      - get top and left of center element
+      */
+      //
+      // var wire_svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      // wire_svg.innerHTML = text;
+      // wire_svg.setAttribute("width", 200);
+      // wire_svg.setAttribute("height", 200);
+      // wire_svg.classList.add("battery-wire");
+      //
+      // new_battery.appendChild(wire_svg);
+
+
+
+
+
+
+
+
+
     }
 
     // update the div

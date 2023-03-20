@@ -204,11 +204,17 @@ circle.circle-progress-svg {
 
 
 
+.battery-wire {
+  fill: transparent;
+  stroke: var(--purple);
+  stroke-width: 4;
+}
+
 
 
 
 .feed {
-  display: none;
+  /* display: none; */
 
 
   /* style */
